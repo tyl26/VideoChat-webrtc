@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="headline">ViChatty</h1>
+      <h2 class="subheadline">Create a room</h2>
+      <input class="input" type="text" placeholder="create room" id="room" />
+      <button class="button" id="createRoom">Create Room</button>
+
+      <h2 class="subheadline">Select the room you want to join</h2>
+      <form action="video-chat.html">
+        <input
+          class="input"
+          type="text"
+          name="username"
+          placeholder="username"
+          id="username"
+        />
+
+        <select class="selection" name="room" id="select" required>
+          <option disabled selected>Choose room</option>
+          <option value="test">test</option>
+          <option value="new">new</option>
+        </select>
+      </form>
+      <button class="button" id="joinRoom">join room</button>
+    </main>
+
+    <script src="./js/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video room</title>
+  </head>
+  <body>
+    <h1>video chat started</h1>
+
+    <h2 id="username"></h2>
+    <video
+      src=""
+      id="localVideo"
+      muted
+      autoplay
+      style="width: 300px; height: 240px"
+    ></video>
+    
+    <div id="remoteVideo"></div>
+    <h2 id="remoteUsername"></h2>
+
+<button value="share"id="btn">share</button>
+<button value="stop"id="stop">stop</button>    
+<button value="camerabtn"id="cameraBtn">Camera off</button>    
+<button value="micbtn"id="micBtn">mute</button>    
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.1/qs.min.js"
+      integrity="sha512-5Zv/hNtOKSkeScnIYOqGjng82gQSHsCoyqq9TgrJLgYa032cUYWH4kF1ayS8Gz1Jfge7e8MaBF6AeEvoQ92v8w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+      integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js" ></script>
+
+  </body>
+</html>
