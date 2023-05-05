@@ -23,7 +23,22 @@ let peerConnections = new Map();
 const servers = {
   iceServers: [
     {
-      urls: ["stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"],
+      urls: "stun:a.relay.metered.ca:80",
+    },
+    {
+      urls: "turn:a.relay.metered.ca:80",
+      username: "f6de8d4b9f7bd1de1408b8f3",
+      credential: "FAZrFTuBsCxg3KxA",
+    },
+    {
+      urls: "turn:a.relay.metered.ca:80?transport=tcp",
+      username: "f6de8d4b9f7bd1de1408b8f3",
+      credential: "FAZrFTuBsCxg3KxA",
+    },
+    {
+      urls: "turn:a.relay.metered.ca:443",
+      username: "f6de8d4b9f7bd1de1408b8f3",
+      credential: "FAZrFTuBsCxg3KxA",
     },
   ],
 };
@@ -108,8 +123,8 @@ function createPeerConnection(socketId) {
     RemoteVideo.id = socketId;
     RemoteVideo.srcObject = event.streams[0];
     RemoteVideo.autoplay = true;
-    RemoteVideo.muted = true;
-    // RemoteVideo.playsInline = true;
+    // RemoteVideo.muted = true;
+    RemoteVideo.playsInline = true;
     const div = document.getElementById("remoteVideo");
     div.appendChild(RemoteVideo);
     Video.push(RemoteVideo);
@@ -295,7 +310,7 @@ function init() {
   getMediaStream()
     .then(() => {
       socket.emit("joinRoom", room, username);
-      
+
       socket.on("otherUsersJoined", (sockets) => {
         console.log("andra användare", sockets);
         sockets.forEach((socketId) => {
@@ -304,6 +319,7 @@ function init() {
           id = socketId;
         });
       });
+
 
       socket.on("offer", (data) => {
         console.log(data);
